@@ -10,7 +10,7 @@ function FacilityPage(){
    const [isLoading,setIsLoading] = useState(true)
 
    useEffect(()=>{
-     fetch(`http://127.0.0.1:8000/api/entry/${params.entryId}`,{
+     fetch(`https://barbara1.pythonanywhere.com/api/entry/${params.entryId}`,{
          method: 'GET',
       })
       .then(res=>res.json())

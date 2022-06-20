@@ -10,7 +10,7 @@ function EditContacts(){
    const [isLoading,setIsLoading] = useState(true)
 
    useEffect(()=>{
-      fetch(`http://127.0.0.1:8000/api/editcontact/${params.entryId}`,{
+      fetch(`https://barbara1.pythonanywhere.com/api/editcontact/${params.entryId}`,{
          method: 'GET',
       })
       .then(res=>res.json())
@@ -28,7 +28,7 @@ function EditContacts(){
    },[params.entryId])
 
    const Edit =()=>{
-      fetch(`http://127.0.0.1:8000/api/editcontact/${params.entryId}`,{
+      fetch(`https://barbara1.pythonanywhere.com/api/editcontact/${params.entryId}`,{
          method: 'PUT',
          headers: {
             'Content-Type' : 'application/json', 

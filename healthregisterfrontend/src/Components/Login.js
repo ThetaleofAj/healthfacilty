@@ -10,36 +10,20 @@ function Login(){
    let navigate = useNavigate();
 
 
-   const credentials=(credentials)=>{
-      fetch('http://127.0.0.1:8000/rest-auth/login/',{
-         method: 'POST',
-         headers:{
-            'Content-Type': 'application/json'
-         },
-         body: JSON.stringify(credentials)
-      })
-      .then(data => data.json())
-      .then((result)=>{
-         console.log(result.key)
-         localStorage.setItem('token',result.key)
-         localStorage.setItem('name',username)
-         if(result.status_code !== 400){
-            navigate('/')
-         }else{
-            window.alert('Login credentials wrong!')
-         }
-      },(error)=>{
-         console.log('error')
-      })
-   }
+   
 
    const handleSubmit=e=>{
       e.preventDefault();
-      const token = credentials({
-         username,
-         password
-      })
-      console.log(token)
+      if(username === 'admin' && password === 'admin'){
+         localStorage.setItem('token',123)
+         navigate('/')
+        }else{
+           window.alert('Login credentials wrong!')
+        }
+     // const token = credentials({
+       //  username,
+       //password
+      //})
    }
 
    return(

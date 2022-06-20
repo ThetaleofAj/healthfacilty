@@ -16,12 +16,11 @@ function NewEntry(){
    let navigate = useNavigate();
 
    useEffect(()=>{
-      const token = localStorage.getItem('token')
       setIsLoading(false)
-      fetch('http://127.0.0.1:8000/api/create/',{
+      fetch('https://barbara1.pythonanywhere.com/api/create/',{
          method: 'GET',
          headers: {
-            'Authorization': 'token ' + token
+          //  'Authorization': 'token ' + token
          }
       })
       .then(res=>res.json())
@@ -43,11 +42,10 @@ function NewEntry(){
    },[])
 
    const createEntry=(components)=>{
-      const token = localStorage.getItem('token')
-      fetch('http://127.0.0.1:8000/api/create/',{
+      fetch('https://barbara1.pythonanywhere.com/api/create/',{
          method: 'POST',
          headers: {
-            'Authorization': 'token ' + token,
+          //  'Authorization': 'token ' + token,
             'Content-Type': 'application/json'
          },
          body: JSON.stringify(

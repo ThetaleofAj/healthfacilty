@@ -12,7 +12,7 @@ function Dashboard(){
     
 
    useEffect(()=>{
-      fetch('http://127.0.0.1:8000/api/')
+      fetch('https://barbara1.pythonanywhere.com/api/')
       .then(res=>res.json())
       .then(
          (result)=>{
@@ -38,7 +38,7 @@ function Dashboard(){
       window.location.reload()
    }
    const onSubmit =()=>{
-      fetch(`http://127.0.0.1:8000/api/?search=${searchItem}`)
+      fetch(`https://barbara1.pythonanywhere.com/api/?search=${searchItem}`)
       .then(res=>res.json())
       .then(
          (result)=>{
